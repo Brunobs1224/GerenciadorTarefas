@@ -4,21 +4,39 @@ import mostrarcalendario from "./calendario.js";
 const buttonadicionar = document.getElementById("buttonadicionar");
 let input = document.getElementById("input");
 const listahtml = document.getElementById("listahtml");
-let lista = [];
-let buttonTodas = document.getElementById("todas");
-let buttonPendentes = document.getElementById("pendentes");
 
+function carregarTarefas() {
+    fetch("http://localhost:3000/tarefas")
+    .then(res => res.json())
+    .then(lista => {
+        renderizarLista(lista, listahtml);
+        mostrarcalendario(lista);
+    })
+};
 
-buttonadicionar.addEventListener("click", ()=> {
+buttonadicionar.addEventListener("click", () => {
     let prioridade = document.querySelector(".prioridade input:checked");
     let data = document.getElementById("data");
     if ((prioridade) && (data.value)) {
         let valor = input.value;
-        lista.push({texto: valor,
-            prioridade: prioridade.value,
-            prazo: data.value
-    });
-        renderizarLista(lista, listahtml);
+
+        fetch("http://localhost:3000", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                texto: valor,
+                prioridade: prioridade.value,
+                prazo: data.value
+            })
+        })
+
+        .then(res => res.json())
+        .then(lista => {
+            renderizarLista(lista, listahtml);
+            mostrarcalendario(lista);
+        })
 }});
 
 
@@ -29,11 +47,15 @@ listahtml.addEventListener("click", (e)=>{
     const div = e.target.closest(".lista");
     const index = div.dataset.index;
 
-    lista.splice(index, 1);
-    renderizarLista(lista, listahtml);
+    fetch(`http://localhost:3000/${index}`, {
+        method: "DELETE"
+    })
 
+    .then(res => res.json())
+    .then(lista => {
+        renderizarLista(lista, listahtml)
+        mostrarcalendario(lista);
+    })
 });
 
-
-mostrarcalendario();
-
+carregarTarefas();
