@@ -4,14 +4,14 @@ export default function renderizarLista(lista, listahtml) {
         const div = document.createElement("div");
         div.classList.add("lista");
         div.classList.add(lista[i].prioridade);
-        div.dataset.index = i;
+        div.dataset.index = lista[i].id;
 
         const input = document.createElement("input");
         input.type = "checkbox";
 
         const buttonfechar = document.createElement("button");
         buttonfechar.classList.add("lixeira");
-        buttonfechar.dataset.index = i;
+        buttonfechar.dataset.index = lista[i].id;
 
         const x = document.createElement("img");
         x.src = "/icons8-lixeira-48.png";
@@ -20,7 +20,7 @@ export default function renderizarLista(lista, listahtml) {
         p.textContent = lista[i].texto;
 
         const espacodate = document.createElement("p");
-        let date = new Date(lista[i].prazo);
+        let date = new Date(lista[i].data);
         let dateFormatada = date.toLocaleDateString('pt-BR', {timeZone: 'UTC'});
         espacodate.textContent = dateFormatada;
         espacodate.classList.add("date");

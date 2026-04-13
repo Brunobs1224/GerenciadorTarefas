@@ -11,6 +11,7 @@ node_modules
 dist
 dist-ssr
 *.local
+icons8-lixeira-48
 
 # Editor directories and files
 .vscode/*

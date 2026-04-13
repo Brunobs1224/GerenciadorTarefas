@@ -1,4 +1,4 @@
-import "./gerenciador.css";
+import "./home.css";
 import { Calendar } from "@fullcalendar/core";
 import dayGridPlugin from "@fullcalendar/daygrid";
 
@@ -10,15 +10,15 @@ export default function mostrarcalendario(lista) {
 
     if (calendarioInstancia) {
     calendarioInstancia.destroy();
-    }
+    };
 
     calendarioInstancia = new Calendar(calendario, {
         plugins: [dayGridPlugin], 
         events: lista.map(item => ({
             title: item.texto, 
-            start: item.prazo,
+            start: item.data,
             allDay: true,
-            display: "background",
+            textColor: "black",
             backgroundColor:
                 item.prioridade === "alto" ? "red":
                 item.prioridade === "medio" ? "yellow":

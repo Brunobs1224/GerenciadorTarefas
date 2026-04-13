@@ -1,53 +1,101 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="stylesheet" href="gerenciador.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>gerenciadortarefas</title>
-  </head>
-  <body>
-    <header class="titulocontainer">
-        <h1>Nexus</h1>
-    </header>
-    <div class="parte1">
-        <input placeholder="Digite uma nova tarefa" class="input" id="input">
-        <input type="date" class="data" id="data">
-        <button class="buttonadicionar" id="buttonadicionar">Adicionar</button>
-        <br>
-    </div>
-    <div>
-        <h2>Prioridade</h2>
-        <div class="prioridade">
-            <label class="label">
-                <input type="radio" name= "prioridade" value="alto">Alto
-            </label>
-            <label class="label">
-                <input type="radio" name= "prioridade" value="medio">Médio
-            </label>
-            <label class="label">
-                <input type="radio" name= "prioridade" value="baixo">Baixo
-            </label>
-        </div>
-    </div>
-    <br>
-    <br>
-    <br>
-    <div class="parte2">
-        <button id="todas">Todas</button>
-        <button id="pendentes">Pendentes</button>
-        <button id="concluidas">Concluídas</button>
-        <p class="linha"></p>
-    </div>
-    <h2></h2>
-    <div class="parte3">
-        <div id="listahtml" class="listahtml">
-        </div>
-    </div>
-    <div id="calendario">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexus</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./index.css" />
+</head>
+<body>
+  <header class="topo">
+    <h1>NEXUS</h1>
+    <div><a href="http://localhost:5173/login.html">Login</a></div>
+  </header>
+  <main class="conteudo">
+    <h2 class="titulo-animado">
+        <span>G</span>
+        <span>e</span>
+        <span>r</span>
+        <span>e</span>
+        <span>n</span>
+        <span>c</span>
+        <span>i</span>
+        <span>a</span>
+        <span>n</span>
+        <span>d</span>
+        <span>o</span>
+        <span>&nbsp;</span>
+        <span>o</span>
+        <span>&nbsp;</span>
+        <span>s</span>
+        <span>e</span>
+        <span>u</span>
+        <span>&nbsp;</span>
+        <span>t</span>
+        <span>e</span>
+        <span>m</span>
+        <span>p</span>
+        <span>o</span>
+        <span>!</span>
+    </h2>
 
-    </div>
-    <script type="module" src="main.js"></script>
-  </body>
+    <section class="predios">
+      <div class="predio predio-1">
+        <div class="janelas grade-3x7">
+          <span></span><span></span><span></span>
+          <span></span><span></span><span></span>
+          <span></span><span></span><span></span>
+          <span></span><span></span><span></span>
+          <span></span><span></span><span></span>
+          <span></span><span></span><span></span>
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+
+      <div class="predio predio-2">
+        <div class="janelas grade-1x10">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <div class="predio predio-3">
+        <div class="janelas grade-2x6">
+          <span></span><span></span>
+          <span></span><span></span>
+          <span></span><span></span>
+          <span></span><span></span>
+          <span></span><span></span>
+          <span></span><span></span>
+          <span></span><span></span>
+          <span></span><span></span>
+          
+        </div>
+      </div>
+
+      <div class="predio predio-4">
+        <div class="janelas grade-2x4">
+          <span></span><span></span>
+          <span></span><span></span>
+          <span></span><span></span>
+          <span></span><span></span>
+          <span></span><span></span>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
 </html>

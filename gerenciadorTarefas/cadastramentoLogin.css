@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Zen Dots", sans-serif;
+}
+
+body {
+    background-color: #f3f3f3;
+    color: #111;
+    min-height: 100vh;
+    position: relative;
+}
+
+.topo {
+    display: flex;
+    color: #f3f3f3;
+    background-color: #111;
+
+}
+
+.topo h1 {
+    font-size: 50px;
+    letter-spacing: 2px;
+    margin: 0px;
+    font-family: "Zen Dots", sans-serif;
+}
+
+.boxcontainerlogin{
+    border-radius: 10px;
+    position: fixed;
+    height:40vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    top:50vh;
+    left: 0;
+    transform: translateY(-75%);
+    justify-content: center;
+    gap: 50px;
+    z-index: 2;
+}
+.login-container{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 50vw;
+    transform: translateX(-50%);
+    gap: 20px;
+    border-radius: 10px;
+    width: 60vw;
+    background-color: #f3f3f3;
+    width: 50vw;
+}
+.login-container div{
+    display: flex;
+    justify-content: center;
+}
+.login-container div h2{
+    font-size: 40px;
+    font-family: "Zen Dots", sans-serif;
+}
+.login-container form{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    gap: 10px;
+}
+.login-container form input{
+    width: clamp(15vw, 200px, 35vw);
+    height: clamp(5vh, 35px, 10vh);
+    border-radius: 10px;
+}
+.login-container form button{
+    width: 15vw;
+    height: 8vh;
+    border-radius: 10px;
+    background-color: #111;
+    color: #f3f3f3;
+    font-family: "Zen Dots", sans-serif;
+}
+
+.predios{
+    z-index: 0;
+    display: flex;
+    position: fixed;
+    min-width: 100vw;
+    min-height: calc(100vh - 61px);
+}
+.predio-1{
+    position: fixed;
+    background-color: #111;
+    width: 20vw;
+    height: calc(100vh - 61px);
+}
+.predio-2{
+    position: fixed;
+    background-color: #111;
+    width: 20vw;
+    height: 120vh;
+    bottom: -40vh;
+    right: 0;
+    border-radius: 200px;
+}
+.janelas{
+    display: grid;
+    justify-content: center;
+    position: fixed;
+}
+.janelas.grade-2x9{
+    grid-template-columns: repeat(2, 10vw);
+    gap: 5vh 1vw;
+}
+.janelas.grade-2x9 span{
+    display: block;
+    width: 7vw;
+    height: 10vh;
+    background-color: #f3f3f3;
+}
+.janelas.grade-1x6{
+    grid-template-columns: 1fr;
+    gap: 0vh;
+    height: 100%;
+    justify-items: center;
+}
+.janelas.grade-1x6 span{
+    display: block;
+    width: 15vw;
+    height: 8vh;
+    background-color: #f3f3f3;
+    margin-top: 20vh;
+    margin-bottom: -10vh;
+    margin-right: 2.5vw;
+    margin-left: 2.5vw;
+}

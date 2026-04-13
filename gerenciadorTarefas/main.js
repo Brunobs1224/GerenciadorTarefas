@@ -6,7 +6,7 @@ let input = document.getElementById("input");
 const listahtml = document.getElementById("listahtml");
 
 function carregarTarefas() {
-    fetch("http://localhost:3000/tarefas")
+    fetch("http://localhost:3000/tasks")
     .then(res => res.json())
     .then(lista => {
         renderizarLista(lista, listahtml);
@@ -16,11 +16,11 @@ function carregarTarefas() {
 
 buttonadicionar.addEventListener("click", () => {
     let prioridade = document.querySelector(".prioridade input:checked");
-    let data = document.getElementById("data");
-    if ((prioridade) && (data.value)) {
+    let data = document.getElementById("data").value;
+    if ((prioridade) && (data)) {
         let valor = input.value;
 
-        fetch("http://localhost:3000", {
+        fetch("http://localhost:3000/tasks", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -28,14 +28,14 @@ buttonadicionar.addEventListener("click", () => {
             body: JSON.stringify({
                 texto: valor,
                 prioridade: prioridade.value,
-                prazo: data.value
+                data: data, 
+                completa: false
             })
         })
 
         .then(res => res.json())
-        .then(lista => {
-            renderizarLista(lista, listahtml);
-            mostrarcalendario(lista);
+        .then(resposta => {
+            carregarTarefas();
         })
 }});
 
@@ -45,17 +45,17 @@ listahtml.addEventListener("click", (e)=>{
     if (!buttonfechar) return;
 
     const div = e.target.closest(".lista");
-    const index = div.dataset.index;
+    const id = div.dataset.index;
 
-    fetch(`http://localhost:3000/${index}`, {
-        method: "DELETE"
+    fetch(`http://localhost:3000/tasks/${id}`, {
+        method: "DELETE", 
     })
 
     .then(res => res.json())
     .then(lista => {
-        renderizarLista(lista, listahtml)
-        mostrarcalendario(lista);
+        carregarTarefas();
     })
 });
 
 carregarTarefas();
+console.log("main funcionando");

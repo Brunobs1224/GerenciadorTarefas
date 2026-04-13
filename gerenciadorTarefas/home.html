@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="./home.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>gerenciadortarefas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="titulocontainer">
+        <h1>NEXUS</h1>
+    </header>
+    <div class="parte1">
+        <input placeholder="Digite uma nova tarefa" class="input" id="input">
+        <input type="date" class="data" id="data">
+        <button class="buttonadicionar" id="buttonadicionar">Adicionar</button>
+        <br>
+    </div>
+    <div>
+        <h2></h2>
+        <div class="prioridade">
+            <label class="label">
+                <input type="radio" name= "prioridade" value="alto">Alto
+            </label>
+            <label class="label">
+                <input type="radio" name= "prioridade" value="medio">Médio
+            </label>
+            <label class="label">
+                <input type="radio" name= "prioridade" value="baixo">Baixo
+            </label>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="parte2">
+        <button id="todas">Todas</button>
+        <button id="pendentes">Pendentes</button>
+        <button id="concluidas">Concluídas</button>
+        <br>
+        <br>
+        <br>
+        <p class="linha"></p>
+    </div>
+    <h2></h2>
+    <div class="parte3">
+        <!--aqui dentro vai aparecer a lista de tarefas-->
+        <div id="listahtml" class="listahtml">
+        </div>
+    </div>
+    <br>
+    <br>
+    <div id="calendario">
+
+    </div>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
